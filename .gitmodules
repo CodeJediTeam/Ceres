@@ -1,0 +1,3 @@
+[submodule "ext/Babylon"]
+	path = ext/Babylon
+	url = git@github.com:CodeJediTeam/Babylon.git
