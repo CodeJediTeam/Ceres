@@ -1,9 +1,9 @@
 #pragma once
 
 #include <Common/Globals.h>
-#include <Core/IAppDelegate.h>
+#include <System/IAppDelegate.h>
 
-class AppDelegate final : public BS::Core::IAppDelegate
+class AppDelegate final : public Babylon::System::IAppDelegate
 {
 public:
     virtual void OnInit() override;

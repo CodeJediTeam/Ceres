@@ -1,5 +1,5 @@
 #include <App/AppDelegate.h>
 #include <Common/Globals.h>
-#include <Core/Entry.h>
+#include <System/Entry.h>
 
-ENTRY_POINT(AppDelegate)
+BABYLON_ENTRY_POINT(AppDelegate)
