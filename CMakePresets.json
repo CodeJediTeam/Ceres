@@ -1,0 +1,65 @@
+{
+	"version": 6,
+	"cmakeMinimumRequired": {
+		"major": 3,
+		"minor": 29,
+		"patch": 0
+	},
+	"configurePresets": [
+		{
+			"name": "mac_dev_ninja_base",
+			"hidden": true,
+			"generator": "Ninja",
+			"binaryDir": "${sourceDir}/build/${presetName}",
+			"cacheVariables": {
+				"CMAKE_OSX_DEPLOYMENT_TARGET": "10.13",
+				"CMAKE_APPLE_SILICON_PROCESSOR": "arm64"
+			},
+			"toolset": {
+				"value": "buildsystem=12",
+				"strategy": "external"
+			}
+		},
+		{
+			"name": "debug",
+			"hidden": true,
+			"cacheVariables": {
+				"CMAKE_BUILD_TYPE": "Debug"
+			}
+		},
+		{
+			"name": "profile",
+			"hidden": true,
+			"cacheVariables": {
+				"CMAKE_BUILD_TYPE": "Profile"
+			}
+		},
+		{
+			"name": "project_base",
+			"hidden": true,
+			"cacheVariables": {
+				"MACOSX": "TRUE"
+			}
+		},
+		{
+			"name": "mac_dev_ninja_debug",
+			"inherits": [
+				"mac_dev_ninja_base",
+				"debug",
+				"project_base"
+			],
+			"hidden": false
+		},
+		{
+			"name": "mac_dev_ninja_profile",
+			"inherits": [
+				"mac_dev_ninja_base",
+				"profile",
+				"project_base"
+			],
+			"cacheVariables": {
+				"TRACY_ENABLE": "ON"
+			}
+		}
+	]
+}

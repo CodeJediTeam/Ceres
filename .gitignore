@@ -8,6 +8,9 @@
 # MS Visual Studio Code
 .vscode
 
+# JetBrains
+.idea
+
 # MacOS
 .DS_Store
 
