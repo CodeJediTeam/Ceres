@@ -36,10 +36,7 @@
 		},
 		{
 			"name": "project_base",
-			"hidden": true,
-			"cacheVariables": {
-				"MACOSX": "TRUE"
-			}
+			"hidden": true
 		},
 		{
 			"name": "mac_dev_ninja_debug",
