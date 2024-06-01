@@ -12,8 +12,24 @@
 			"generator": "Ninja",
 			"binaryDir": "${sourceDir}/build/${presetName}",
 			"cacheVariables": {
-				"CMAKE_OSX_DEPLOYMENT_TARGET": "10.13",
-				"CMAKE_APPLE_SILICON_PROCESSOR": "arm64"
+				"CMAKE_OSX_DEPLOYMENT_TARGET": "14.5",
+				"CMAKE_APPLE_SILICON_PROCESSOR": "arm64",
+				"CMAKE_OSX_ARCHITECTURES": "arm64"
+			},
+			"toolset": {
+				"value": "buildsystem=12",
+				"strategy": "external"
+			}
+		},
+		{
+			"name": "mac_dev_xcode_base",
+			"hidden": true,
+			"generator": "Xcode",
+			"binaryDir": "${sourceDir}/build/${presetName}",
+			"cacheVariables": {
+				"CMAKE_OSX_DEPLOYMENT_TARGET": "14.5",
+				"CMAKE_APPLE_SILICON_PROCESSOR": "arm64",
+				"CMAKE_OSX_ARCHITECTURES": "arm64"
 			},
 			"toolset": {
 				"value": "buildsystem=12",
@@ -57,6 +73,15 @@
 			"cacheVariables": {
 				"TRACY_ENABLE": "ON"
 			}
+		},
+		{
+			"name": "mac_dev_xcode_debug",
+			"inherits": [
+				"mac_dev_xcode_base",
+				"debug",
+				"project_base"
+			],
+			"hidden": false
 		}
 	]
 }

@@ -1,2 +1,2 @@
 cd "$(dirname "$0")/../"
-cmake -B build -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug
+cmake --preset mac_dev_xcode_debug -S . -B ./build/mac_dev_xcode_debug -DCMAKE_BUILD_TYPE=Debug
