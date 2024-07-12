@@ -14,5 +14,5 @@ babylon_configure_app(
     OUTPUT_DIR bin
     INCLUDE_DIRS src
     SOURCE_SEARCH_MASKS src/*.h src/*.cpp
-    DEPEND_MODULES Common System
+    DEPEND_MODULES BabylonCommon BabylonSystem
 )
