@@ -7,29 +7,18 @@
 	},
 	"configurePresets": [
 		{
-			"name": "mac_dev_ninja_base",
+			"name": "common",
 			"hidden": true,
-			"generator": "Ninja",
-			"binaryDir": "${sourceDir}/build/${presetName}",
-			"cacheVariables": {
-				"CMAKE_OSX_DEPLOYMENT_TARGET": "14.5",
-				"CMAKE_APPLE_SILICON_PROCESSOR": "arm64",
-				"CMAKE_OSX_ARCHITECTURES": "arm64"
-			},
-			"toolset": {
-				"value": "buildsystem=12",
-				"strategy": "external"
-			}
+			"binaryDir": "${sourceDir}/build/${presetName}"
 		},
 		{
-			"name": "mac_dev_xcode_base",
+			"name": "mac",
 			"hidden": true,
-			"generator": "Xcode",
-			"binaryDir": "${sourceDir}/build/${presetName}",
 			"cacheVariables": {
 				"CMAKE_OSX_DEPLOYMENT_TARGET": "14.5",
 				"CMAKE_APPLE_SILICON_PROCESSOR": "arm64",
-				"CMAKE_OSX_ARCHITECTURES": "arm64"
+				"CMAKE_OSX_ARCHITECTURES": "arm64",
+				"BABYLON_OS_MAC": "ON"
 			},
 			"toolset": {
 				"value": "buildsystem=12",
@@ -44,44 +33,66 @@
 			}
 		},
 		{
-			"name": "profile",
+			"name": "release",
 			"hidden": true,
 			"cacheVariables": {
-				"CMAKE_BUILD_TYPE": "Profile"
+				"CMAKE_BUILD_TYPE": "Release"
 			}
 		},
 		{
-			"name": "project_base",
-			"hidden": true
-		},
-		{
-			"name": "mac_dev_ninja_debug",
-			"inherits": [
-				"mac_dev_ninja_base",
-				"debug",
-				"project_base"
-			],
-			"hidden": false
-		},
-		{
-			"name": "mac_dev_ninja_profile",
-			"inherits": [
-				"mac_dev_ninja_base",
-				"profile",
-				"project_base"
-			],
+			"name": "profile",
+			"hidden": true,
 			"cacheVariables": {
+				"CMAKE_BUILD_TYPE": "Profile",
 				"TRACY_ENABLE": "ON"
 			}
 		},
 		{
-			"name": "mac_dev_xcode_debug",
+			"name": "project",
+			"hidden": true
+		},
+		{
+			"name": "mac_ninja_debug",
+			"hidden": false,
+			"generator": "Ninja",
 			"inherits": [
-				"mac_dev_xcode_base",
+				"common",
+				"mac",
 				"debug",
-				"project_base"
-			],
-			"hidden": false
+				"project"
+			]
+		},
+		{
+			"name": "mac_ninja_release",
+			"hidden": false,
+			"generator": "Ninja",
+			"inherits": [
+				"common",
+				"mac",
+				"release",
+				"project"
+			]
+		},
+		{
+			"name": "mac_ninja_profile",
+			"hidden": false,
+			"generator": "Ninja",
+			"inherits": [
+				"common",
+				"mac",
+				"profile",
+				"project"
+			]
+		},
+		{
+			"name": "mac_xcode",
+			"hidden": false,
+			"generator": "Xcode",
+			"inherits": [
+				"common",
+				"mac",
+				"project"
+			]
 		}
 	]
 }
