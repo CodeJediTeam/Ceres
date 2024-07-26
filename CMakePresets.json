@@ -26,6 +26,21 @@
 			}
 		},
 		{
+			"name": "win",
+			"hidden": true,
+			"cacheVariables": {
+				"BABYLON_OS_MAC": "OFF"
+			},
+			"architecture": {
+				"value": "x64",
+				"strategy": "external"
+			},
+			"toolset": {
+				"value": "v143",
+				"strategy": "external"
+			}
+		},
+		{
 			"name": "debug",
 			"hidden": true,
 			"cacheVariables": {
@@ -91,6 +106,16 @@
 			"inherits": [
 				"common",
 				"mac",
+				"project"
+			]
+		},
+		{
+			"name": "win_msvc",
+			"hidden": false,
+			"generator": "Visual Studio 17 2022",
+			"inherits": [
+				"common",
+				"win",
 				"project"
 			]
 		}
