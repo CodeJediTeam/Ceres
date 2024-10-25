@@ -8,9 +8,9 @@ namespace App
 class AppDelegate final : public Babylon::System::IAppDelegate
 {
 public:
-    void Init() override;
-    void DeInit() override;
-    void Run() override;
+    void OnAppSetup() override;
+    void OnAppTeardown() override;
+    void OnAppRun() override;
 };
 
 } // namespace App

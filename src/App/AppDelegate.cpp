@@ -5,17 +5,17 @@
 namespace App
 {
 
-void AppDelegate::Init()
+void AppDelegate::OnAppSetup()
 {
     std::cout << "AppDelegate::Init()" << std::endl;
 }
 
-void AppDelegate::DeInit()
+void AppDelegate::OnAppTeardown()
 {
     std::cout << "AppDelegate::DeInit()" << std::endl;
 }
 
-void AppDelegate::Run()
+void AppDelegate::OnAppRun()
 {
     std::cout << "Hello from App" << std::endl;
 }
