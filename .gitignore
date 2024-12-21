@@ -21,3 +21,6 @@ lib/
 
 # Env
 .venv
+
+# Misc
+tmp/

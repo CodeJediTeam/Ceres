@@ -17,8 +17,7 @@
 			"cacheVariables": {
 				"CMAKE_OSX_DEPLOYMENT_TARGET": "14.5",
 				"CMAKE_APPLE_SILICON_PROCESSOR": "arm64",
-				"CMAKE_OSX_ARCHITECTURES": "arm64",
-				"BABYLON_OS_MAC": "ON"
+				"CMAKE_OSX_ARCHITECTURES": "arm64"
 			},
 			"toolset": {
 				"value": "buildsystem=12",
@@ -29,7 +28,6 @@
 			"name": "win",
 			"hidden": true,
 			"cacheVariables": {
-				"BABYLON_OS_MAC": "OFF"
 			},
 			"architecture": {
 				"value": "x64",
