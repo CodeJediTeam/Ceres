@@ -5,7 +5,7 @@ cmake_minimum_required(VERSION 3.30.0 FATAL_ERROR)
 
 # Babylon
 add_subdirectory(ext/Babylon Babylon)
-babylon_enable_modules(BabylonCommon BabylonSystem)
+babylon_enable_modules(BabylonCommon BabylonSystem BabylonUI)
 
 # App
 project(Ceres)
